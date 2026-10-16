@@ -197,6 +197,45 @@
       .cta-card h3,.social-box h3,.modal h3{font-size:36px}
       .mobile-menu.open{display:block}
     }
+  
+    /* Mobile layout and direct WhatsApp contact */
+    html{scroll-padding-top:90px}
+    .whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:60;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#168b48;color:#fff;border:2px solid #fff;box-shadow:0 6px 24px #0003;transition:transform .2s,background .2s}
+    .whatsapp-float:hover{background:#10753c;transform:translateY(-3px)}
+    .whatsapp-float:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .whatsapp-float svg{width:32px;height:32px}
+    @media(max-width:700px){
+      .nav{gap:10px;min-height:76px;padding:10px 0}
+      .brand{flex:none;align-items:flex-start}
+      .brand strong{font-size:32px;white-space:nowrap;letter-spacing:-.8px}
+      .brand strong span{font-size:20px}
+      .brand small{font-size:8px;letter-spacing:.2em;white-space:nowrap;margin-top:5px}
+      .nav-actions{margin-left:auto;gap:0}
+      .nav-actions .btn-primary{padding:12px 14px;font-size:10px;letter-spacing:.03em;min-height:44px}
+      .mobile-toggle{flex:none;width:44px;height:44px;padding:0;font-size:26px}
+      .hero{padding:0}
+      .hero-copy{padding:42px 0 28px}
+      .hero-copy .eyebrow{font-size:10px;letter-spacing:.15em;line-height:1.6}
+      h1{font-size:clamp(42px,12vw,56px);margin:22px 0}
+      .hero-proof{gap:12px;margin-top:28px;font-size:12px;line-height:1.6;flex-wrap:wrap}
+      .hero-side{padding:0 0 36px}
+      .hero-card{height:auto;border-radius:22px;display:flex;flex-direction:column;background:#2c4133}
+      .hero-card img{height:auto;aspect-ratio:auto;object-fit:contain}
+      .hero-card::after{display:none}
+      .hero-note{position:static;padding:20px 22px;border:0;border-radius:0;background:#2c4133;backdrop-filter:none}
+      .hero-note strong{font-size:28px;line-height:1.15}
+      .hero-note span{font-size:10px}
+      .whatsapp-float{right:16px;bottom:max(16px,env(safe-area-inset-bottom));width:56px;height:56px}
+      footer{padding-bottom:90px}
+      .modal{max-height:calc(100dvh - 32px);overflow:auto}
+    }
+    @media(max-width:360px){
+      .nav{gap:6px}
+      .brand strong{font-size:28px}
+      .brand small{font-size:7px}
+      .nav-actions .btn-primary{padding:10px;font-size:9px}
+    }
+
   </style>
 </head>
 <body>
@@ -215,7 +254,7 @@
       </nav>
       <div class="nav-actions">
         <a class="btn btn-secondary" href="https://www.instagram.com/ilmaggioremorretes/" target="_blank" rel="noopener">Instagram ↗</a>
-        <button class="btn btn-primary" data-reserve>Solicitar reserva</button>
+        <button class="btn btn-primary" data-reserve>Reservar</button>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">☰</button>
     </div>
@@ -506,5 +545,7 @@
       window.open(`https://wa.me/5541996558730?text=${msg}`, '_blank', 'noopener');
     });
   </script>
+<a class="whatsapp-float" href="https://wa.me/5541996558730" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o Il Maggiore no WhatsApp" title="Fale conosco no WhatsApp">
+<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .8a15.1 15.1 0 0 0-13 22.8L.9 31.2l7.8-2A15.2 15.2 0 1 0 16 .8Zm0 27.5a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.5 12.5 0 1 1 16 28.3Zm6.9-9.4c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1 1.4 3.5 1.6 3.8c.2.2 2.7 4.2 6.5 5.9.9.4 1.6.6 2.2.8.9.3 1.8.2 2.5.2.8-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5Z"/></svg></a>
 </body>
 </html>
